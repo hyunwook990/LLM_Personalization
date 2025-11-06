@@ -111,10 +111,10 @@ peft_config = LoraConfig(
     lora_dropout=lora_dropout,
     r=lora_r,
     bias="none",
-    task_type="CAUSAL_LM", # 파인튜닝할 태스크를 Optional로 지정할 수 있는데, 여기서는 CASUAL_LM을 지정하였다.
-    target_modules=["q_proj","k_proj","v_proj","o_proj","gate_proj","up_proj","down_proj"]
+    task_type="CAUSAL_LM",              # 파인튜닝할 태스크를 Optional로 지정할 수 있는데, 여기서는 CASUAL_LM을 지정하였다.
+    target_modules=["q_proj","v_proj"]  # 파인튜닝 레이어를 연결할 모듈
     # q, k, v, o -> attention layer, gate, up, down -> dense layer
-    # 파인튜닝 레이어를 연결할 모듈
+    # 주요 표현을 나타내는 레이어인 q, v에만 QLoRA 파인튜닝을 적용한다.
 )
 
 # Training parameters
