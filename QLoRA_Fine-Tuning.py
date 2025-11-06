@@ -29,8 +29,8 @@ new_model = "finetuned_model"
 
 # low-rank matrices 어텐션 차원을 정의
 # 크기가 충분히 크고 모든 가중치 행렬에 적용한다면 이론상 full fine-tuning이 된다.
-# 단어의 의미표현만 변경하는 경우 (ex. money, 돈 -> money, 금화 등) r을 낮게 설정해도 괜찮다.
-lora_r = 32
+# 단어의 의미표현만 변경하는 경우 (ex. money, 돈 -> money, 금화 등) r을 낮게(4) 설정해도 괜찮다.
+lora_r = 8
 lora_alpha = 16  
 lora_dropout = 0.1
 
